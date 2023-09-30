@@ -1,0 +1,32 @@
+﻿@model List<Student>
+<a asp-controller="student" asp-action="add">Add</a>
+
+    @if (Model.Any())
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Roll</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(Student s in Model)
+                {
+                    <tr>
+                        <td>@s.Name</td>
+                        <td>@s.Roll</td>
+                        <td>
+                        <a asp-controller="student" asp-action="edit" asp-route-id="@s.Id">Edit</a>
+                        <a asp-controller="student" asp-action="delete" asp-route-id="@s.Id">Delete</a>
+                        </td>
+                    </tr>     
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>There is no student</p>
+    }

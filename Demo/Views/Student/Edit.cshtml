@@ -1,0 +1,9 @@
+﻿@model Student
+
+<form method="post" asp-controller="student" asp-action="edit">
+    <label>Name:</label><br />
+    <input type="text" asp-for="Name" /><br />
+    <label>Roll:</label><br />
+    <input type="number" asp-for="Roll" /><br />
+    <input type="submit" />
+</form>
